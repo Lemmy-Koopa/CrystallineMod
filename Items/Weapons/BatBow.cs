@@ -34,7 +34,7 @@ namespace CrystallineMod.Items.Weapons
 		{
 			if (type == ProjectileID.WoodenArrowFriendly)
 			{
-				type = ModContent.ProjectileType<StarlitArrow>();
+				type = ModContent.ProjectileType<EcoArrow>();
 			}
 			return true;
 		}
