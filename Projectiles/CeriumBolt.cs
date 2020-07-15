@@ -9,9 +9,12 @@ namespace CrystallineMod.Projectiles
 {
     public class CeriumBolt : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Cerium Bolt");
+        }
         public override void SetDefaults()
         {
-            //projectile.name = "Cerium Bolt";
             projectile.width = 14;
             projectile.height = 30;
             projectile.aiStyle = 0;
@@ -28,9 +31,9 @@ namespace CrystallineMod.Projectiles
 
         public override void AI()
         {
+            projectile.rotation = projectile.velocity.ToRotation();
             Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 5, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
         }
-
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
             if (target.life <= 0)
