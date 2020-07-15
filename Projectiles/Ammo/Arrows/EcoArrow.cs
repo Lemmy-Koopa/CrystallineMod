@@ -41,7 +41,8 @@ namespace CrystallineMod.Projectiles.Ammo.Arrows
                 }
                 projectile.penetrate -= 1;
                 Bounces -= 1;
-            }
+            } else projectile.Kill();
+            return false;
         }
          public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
