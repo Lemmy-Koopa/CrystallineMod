@@ -6,6 +6,13 @@ namespace CrystallineMod
 	{
 		public CrystallineMod()
 		{
+			Properties = new ModProperties()
+			{
+				Autoload = true,
+				AutoloadBackgrounds = true,
+				AutoloadGores = true,
+				AutoloadSounds = true
+			};
 		}
 	}
 }
