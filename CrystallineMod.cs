@@ -4,6 +4,8 @@ namespace CrystallineMod
 {
 	public class CrystallineMod : Mod
 	{
+		public static CrystallineMod instance;
+		
 		public CrystallineMod()
 		{
 			Properties = new ModProperties()
@@ -13,6 +15,16 @@ namespace CrystallineMod
 				AutoloadGores = true,
 				AutoloadSounds = true
 			};
+		}
+		
+		public override void Load()
+		{
+			instance = this;
+		}
+		
+		public override void Unload()
+		{
+			instance = null;
 		}
 	}
 }
