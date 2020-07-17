@@ -11,7 +11,6 @@ namespace CrystallineMod.Projectiles.Ammo.Arrows
         int Bounces;
         
 
-        //TODO: Make gel on arrow pink (Crim's already on it)
 
         public override void SetDefaults()
         {
