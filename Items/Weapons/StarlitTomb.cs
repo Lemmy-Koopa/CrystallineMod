@@ -12,7 +12,7 @@ namespace CrystallineMod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("");
+			Tooltip.SetDefault("Fires 3 stars where the cursor is");
 
 		}
 

@@ -9,7 +9,8 @@ namespace CrystallineMod.Items.Weapons
 {
 	public class BatBow : ModItem
 	{
-		public override void SetStaticDefaults() {
+		public override void SetStaticDefaults() 
+		{
 			Tooltip.SetDefault("Converts Arrows into Eco Arrows which bounce off walls.");
 		}
 
@@ -17,18 +18,18 @@ namespace CrystallineMod.Items.Weapons
 			item.damage = 20;
 			item.ranged = true;
 			item.width = 40;
-			item.height = 20;
-			item.useTime = 20;
+			item.height = 28;
+			item.useTime = 28;
 			item.useAnimation = 20;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; 
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = ItemRarityID.Green;
-			item.UseSound = SoundID.Item16;
+			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
-			item.shoot = 10; 
-			item.shootSpeed = 16f;
+			item.shoot = ProjectileID.PurificationPowder; 
+			item.shootSpeed = 20f;
 			item.useAmmo = AmmoID.Arrow;
 		}
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

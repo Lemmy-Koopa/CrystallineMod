@@ -14,7 +14,7 @@ namespace CrystallineMod.Items.Weapons
             item.damage = 10;
             item.knockBack = 0.6f;
             item.width = item.height = 18;
-            item.shoot = ModContent.ProjectileType<Projectiles.Ammo.Arrows.LeafProjectile>();
+            //item.shoot = ModContent.ProjectileType<Projectiles.Ammo.Arrows.LeafProjectile>();
             item.shootSpeed = 10f;
             item.melee = true;
             item.useAnimation = 12;
