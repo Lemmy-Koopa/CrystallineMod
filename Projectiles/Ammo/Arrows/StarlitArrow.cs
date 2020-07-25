@@ -36,7 +36,7 @@ namespace CrystallineMod.Projectiles.Ammo.Arrows
                 timer = 0;
                 if (projectile.owner == Main.myPlayer)
                 {
-                    int num421 = (int)(projectile.position.X + 4f + Main.rand.Next(projectile.width - 6));
+                    int num421 = (int)(projectile.position.X + 4f + Main.rand.Next(1, 5));
                     int num422 = (int)(projectile.position.Y + projectile.height + 4f);
                     Projectile.NewProjectile(num421, num422, 0f, 4f, ModContent.ProjectileType<StarProjectile>(), projectile.damage, 0f, projectile.owner);
                 }

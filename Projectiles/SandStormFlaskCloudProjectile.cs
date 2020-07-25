@@ -8,8 +8,6 @@ namespace CrystallineMod.Projectiles
     class SandStormFlaskCloudProjectile : ModProjectile
     {
 
-
-
         public override void SetDefaults()
         {
             projectile.width = 22;
