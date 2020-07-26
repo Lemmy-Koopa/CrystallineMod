@@ -11,6 +11,7 @@ namespace CrystallineMod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
+			Item.staff[item.type] = true;
 			Tooltip.SetDefault("Fires a blizzard mist projectile which slows enemies down");
 
 		}
@@ -19,9 +20,9 @@ namespace CrystallineMod.Items.Weapons
 		{
 			item.damage = 9;
 			item.magic = true;
-			item.mana = 7;
-			item.width = 32;
-			item.height = 34;
+			item.mana = 5;
+			item.width = 26;
+			item.height = 38;
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = 5;
@@ -29,10 +30,11 @@ namespace CrystallineMod.Items.Weapons
 			item.knockBack = 5;
 			item.value = Item.buyPrice(0, 0, 7, 20);
 			item.rare = ItemRarityID.Blue;
-			item.UseSound = SoundID.Item20;
+			item.UseSound = SoundID.Item28;
 			item.autoReuse = true;
 			item.shoot = ProjectileType<BlizzardProjectile>();
 			item.shootSpeed = 16f;
+			item.scale = 1.5f;
 
 		}
 	}
