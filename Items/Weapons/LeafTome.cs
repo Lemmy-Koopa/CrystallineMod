@@ -35,7 +35,7 @@ namespace CrystallineMod.Items.Weapons
 			item.autoReuse = true;
 			item.shoot = ModContent.ProjectileType<LeafTomeProjectile>();
 			item.shootSpeed = 16f;
-
+			item.scale = 1.2f;
 		}
 		public override Vector2? HoldoutOffset()
 		{

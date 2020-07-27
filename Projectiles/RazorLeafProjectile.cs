@@ -21,6 +21,7 @@ namespace CrystallineMod.Projectiles
             projectile.tileCollide = false;
             projectile.penetrate = -1;
             projectile.aiStyle = -1;
+            projectile.timeLeft = 180;
 
         }
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)// if its a bool make it return to true or false

@@ -17,10 +17,10 @@ namespace CrystallineMod.Items.Weapons
 		public override void SetDefaults() {
 			item.damage = 20;
 			item.ranged = true;
-			item.width = 40;
-			item.height = 28;
+			item.width = 32;
+			item.height = 64;
 			item.useTime = 28;
-			item.useAnimation = 20;
+			item.useAnimation = 28;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; 
 			item.knockBack = 4;

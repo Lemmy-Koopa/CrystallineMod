@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using static Terraria.ModLoader.ModContent;
+using System;
 
 namespace CrystallineMod.Items.Weapons
 {
@@ -37,22 +38,50 @@ namespace CrystallineMod.Items.Weapons
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, type, damage, knockBack, player.whoAmI, 0f, 0f);
+			bool channeled = (player.itemAnimation > 1 || player.channel) && !player.noItems && !player.CCed;
 
-			if (item.channel == true)
+
+			if (channeled)
 			{
 				ShootCount++; // if item is being held it incresses the shoot count
 			}
-			else ShootCount = 0;
-			return false;
-        }
 
-        public override void ModifyWeaponDamage(Player player, ref float add, ref float mult, ref float flat)
-        {
-            if(ShootCount >= 5)
+
+			if (ShootCount == 5)
+			{
+				item.damage *= 10;
+			}
+
+
+			/*if(ShootCount <= 4)
             {
-				item.damage *= 2;
-            } 
-        }
+				item.damage = 1;
+            }*/
 
+
+
+			return false;	
+        }
+		
+		
+        public override void ModifyWeaponDamage(Player player, ref float add, ref float mult, ref float flat) 
+        {
+
+			bool channeled = (player.itemAnimation > 1 || player.channel) && !player.noItems && !player.CCed;
+
+
+			if (!channeled)
+			{
+				 
+				ShootCount = 0;
+			}
+
+
+			if (ShootCount <= 4)
+			{
+				item.damage = 1;
+			}
+
+		}
     }
 }
