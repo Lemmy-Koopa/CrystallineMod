@@ -29,7 +29,7 @@ namespace CrystallineMod.Items.Armor
 		int projTimer = 0;
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Spawns 3 stars around the player and all damage is incressed by 10%";
+			player.setBonus = "Spawns 3 stars around the player and all damage is increased by 10%";
 			player.meleeDamage += 0.1f;
 			player.thrownDamage += 0.1f;
 			player.rangedDamage += 0.1f;
