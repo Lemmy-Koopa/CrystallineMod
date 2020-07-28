@@ -8,7 +8,7 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SlimeBoots");
+			DisplayName.SetDefault("Starlit Boots");
 		}
 
 		public override void SetDefaults()

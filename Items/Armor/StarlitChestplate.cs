@@ -8,7 +8,7 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("StarlitChestplate");
+			DisplayName.SetDefault("Starlit Chestplate");
 		}
 
 		public override void SetDefaults()
