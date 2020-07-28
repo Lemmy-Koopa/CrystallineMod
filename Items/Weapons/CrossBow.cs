@@ -20,12 +20,12 @@ namespace CrystallineMod.Items.Weapons
 			item.ranged = true;
 			item.width = 22;
 			item.height = 32;
-			item.useTime = 28;
+			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 4;
-			item.value = 10000;
+			item.value = Item.buyPrice(0, 0, 0, 95);
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
@@ -33,6 +33,16 @@ namespace CrystallineMod.Items.Weapons
 			item.shootSpeed = 20f;
 			item.useAmmo = AmmoID.Arrow;
 			item.channel = true;
+		}
+
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Wood, 20);
+			recipe.AddIngredient(ItemID.Cobweb, 10);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 		int ShootCount;
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

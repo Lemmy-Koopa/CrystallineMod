@@ -46,6 +46,20 @@ namespace CrystallineMod.Projectiles
             Main.dust[dustIndex].noGravity = true;
         }
 
+        public override void Kill(int timeLeft)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                int dustIndex = Dust.NewDust(new Vector2(projectile.Center.X, projectile.Center.Y), projectile.width, projectile.height, 110, 0f, 0f, 100, default(Color), 2f);
+                Main.dust[dustIndex].scale *= 0.5f;
+                Main.dust[dustIndex].noGravity = true;
+
+            }
+        }
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+            target.immune[projectile.owner] = 5; // it changes the enemies immunites frames that way you can hit the enemies more without the problem of immunies frames
+        }
     }
 }
 

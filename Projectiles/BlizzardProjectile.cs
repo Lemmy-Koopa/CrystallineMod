@@ -26,7 +26,7 @@ namespace CrystallineMod.Projectiles
         {
             
             //Dust.NewDust(projectile.Center - new Vector2(0, 0), 0, 0, 68, 0, 0, 150, Color.Snow);
-            projectile.scale += 0.1f;
+            
             Vector2 drawPos = projectile.Center - Main.screenPosition;
             Vector2 circularMotion = new Vector2(projectile.width, projectile.height) * projectile.scale * 0.95f;
             circularMotion /= 2f;
@@ -41,7 +41,12 @@ namespace CrystallineMod.Projectiles
             Main.dust[dustIndex].scale *= 1.35f;
             Main.dust[dustIndex].noGravity = true;
 
-
+            if(projectile.scale <= 3) // this scales the projectiles util it scales the projectile until its 3 times the original projectile
+            {
+                projectile.scale *= 1.03f;
+                projectile.width = (int)(projectile.scale * 20); // make the width hitbox bigger
+                projectile.height = (int)(projectile.scale * 24);  // makes the height hitbox bigger
+            }
         }
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

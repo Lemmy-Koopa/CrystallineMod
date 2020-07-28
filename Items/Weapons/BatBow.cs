@@ -24,7 +24,7 @@ namespace CrystallineMod.Items.Weapons
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; 
 			item.knockBack = 4;
-			item.value = 10000;
+			item.value = Item.buyPrice(0, 0, 20, 0);
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;

@@ -19,7 +19,7 @@ namespace CrystallineMod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 5;
+			item.damage = 9;
 			item.magic = true;
 			item.mana = 1;
 			item.width = 32;
@@ -36,6 +36,16 @@ namespace CrystallineMod.Items.Weapons
 			item.shoot = ModContent.ProjectileType<LeafTomeProjectile>();
 			item.shootSpeed = 16f;
 			item.scale = 1.2f;
+			item.reuseDelay = 30;
+		}
+
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Wood, 30);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 		public override Vector2? HoldoutOffset()
 		{
@@ -60,4 +70,6 @@ namespace CrystallineMod.Items.Weapons
 			return player.ownedProjectileCounts[item.shoot] < 5;
 		}
 	}
+
+
 }
