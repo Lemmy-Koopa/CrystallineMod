@@ -13,7 +13,8 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Aquarius Hood");
+			DisplayName.SetDefault("AquariusHood");
+			Tooltip.SetDefault("Allows you to swim in water");
 		}
 
 		public override void SetDefaults()
@@ -39,10 +40,9 @@ namespace CrystallineMod.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Low chance to increase the fire rate of ranged weapons \nGrants the ability to swim";
+			player.setBonus = "Low chance to increase fire rate of all ranged weapons";
 			Lighting.AddLight(player.Bottom, 0.75f, 0.71f, 1.08f);
 			player.GetModPlayer<CrystallineModPlayer>().OverclockArmor = true;
-			player.accFlipper;
 
 		}
 

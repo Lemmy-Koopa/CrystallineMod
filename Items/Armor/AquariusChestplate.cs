@@ -10,7 +10,7 @@ namespace CrystallineMod.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Aquarius Chestplate");
-			Tooltip.SetDefault("Increases ranged damage by 3% and ranged crit by 2%");
+			Tooltip.SetDefault("3% increased range damage \n2% increased range critical strike chance");
 		}
 
 		public override void SetDefaults()

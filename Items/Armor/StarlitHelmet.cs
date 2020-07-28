@@ -12,7 +12,7 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("StarlitHelmet");
+			DisplayName.SetDefault("Starlit Helmet");
 		}
 
 		public override void SetDefaults()
@@ -22,11 +22,12 @@ namespace CrystallineMod.Items.Armor
 			item.defense = 3;
 			item.value = 2000;
 		}
+		
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
 			return body.type == ItemType<StarlitChestplate>() && legs.type == ItemType<StarlitBoots>();
 		}
-		int projTimer = 0;
+		
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Spawns 3 stars around the player and all damage is increased by 10%";
@@ -35,13 +36,18 @@ namespace CrystallineMod.Items.Armor
 			player.rangedDamage += 0.1f;
 			player.magicDamage += 0.1f;
 			player.minionDamage += 0.1f;
-			if(player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()] < 3)
+			CrystallineModPlayer mPlayer = player.GetModPlayer<CrystallineModPlayer>();
+			mPlayer.StarlitArmorSet = true;
+			
+			
+			
+			/*if(player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()] < 3)
 			{
 				if(++projTimer >= 24)
 				{
-					Projectile.NewProjectile(player.Center,Vector2.Zero,ProjectileType<Projectiles.StarSpinProjectile>(),10,2,player.whoAmI,40/*This is the offset value for projectiles*/ * player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()]);
+					Projectile.NewProjectile(player.Center,Vector2.Zero,ProjectileType<Projectiles.StarSpinProjectile>(),10,2,player.whoAmI, 40 * player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()]);
 				}
-			}
+			}*/
 		}
 	}
 }
