@@ -27,7 +27,20 @@ namespace CrystallineMod.Projectiles
 
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
-            int a = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y - 16f, Main.rand.Next(-10, 11) * .25f, Main.rand.Next(-10, -5) * .25f, 694, (int)(projectile.damage * .5f), 0, projectile.owner);
+
+            {
+                
+                float projectilespeedX = 0f;
+                float projectilespeedY = 3f;
+                float projectileknockBack = 4f;
+                int projectiledamage = 25;
+                float numberProjectiles = 2;
+                float rotation = MathHelper.ToRadians(60);
+                for (int i = 0; i < numberProjectiles; i++)
+                {
+                    Projectile.NewProjectile(projectile.position.X, projectile.position.Y, projectilespeedX, projectilespeedY, mod.ProjectileType("SmallHellstoneProjectile"), projectiledamage, projectileknockBack, projectile.owner, 0f, 0f);
+                }
+            }
             return true;
         }
         // the explotion is place holder until i get a sprite for it
