@@ -17,7 +17,7 @@ namespace CrystallineMod.Projectiles.Ammo.Arrows
             projectile.width = 24;
             projectile.height = 14;
             projectile.friendly = true;
-            projectile.melee = true;
+            projectile.ranged = true;
             projectile.tileCollide = true;
             projectile.aiStyle = 1;
             projectile.damage = 6;

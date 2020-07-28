@@ -14,6 +14,7 @@ namespace CrystallineMod.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("AquariusHood");
+			Tooltip.SetDefault("Allows you to swim in water");
 		}
 
 		public override void SetDefaults()
@@ -39,7 +40,7 @@ namespace CrystallineMod.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "small chance to gain OverclockBuff";
+			player.setBonus = "Small chance to gain OverclockBuff";
 			Lighting.AddLight(player.Bottom, 0.75f, 0.71f, 1.08f);
 
 
@@ -51,11 +52,7 @@ namespace CrystallineMod.Items.Armor
 			player.armorEffectDrawOutlines = true;
         }
 
-		public override void UpdateEquip(Player player)
-		{
-			player.accFlipper = true;
-            
-		}
+		
 	}
 }
 

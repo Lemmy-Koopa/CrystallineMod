@@ -10,7 +10,7 @@ namespace CrystallineMod.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Aquarius Boots");
-			Tooltip.SetDefault("3% increased range damage \n2% increased range critical strike chance");
+			Tooltip.SetDefault("3% increased range damage \n2% increased range critical strike chance \nAllows you to swim in water");
 		}
 
 		public override void SetDefaults()
@@ -35,8 +35,10 @@ namespace CrystallineMod.Items.Armor
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.15f; // Makes the movement speed 15% faster + means that it increases the moveSpeed 
-			
+			player.accFlipper = true;
 		}
+
+      
 	}
 }
 

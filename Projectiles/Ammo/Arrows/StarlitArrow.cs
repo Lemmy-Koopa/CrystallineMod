@@ -15,10 +15,11 @@ namespace CrystallineMod.Projectiles.Ammo.Arrows
             projectile.width = 16;
             projectile.height = 25;
             projectile.friendly = true;
-            projectile.melee = true;
+            projectile.ranged = true;
             projectile.penetrate = 1;
             projectile.tileCollide = true;
             projectile.aiStyle = 1;
+
         }
 
         public float Timer
