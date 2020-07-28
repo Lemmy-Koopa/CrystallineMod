@@ -56,6 +56,14 @@ namespace CrystallineMod
 					Item.NewItem(npc.getRect(), mod.ItemType("WaterElement"), Main.rand.Next(3, 5));
 				}
 			}
+
+			if (npc.type == NPCID.FlyingFish)
+			{
+				if ((Main.rand.Next(1) == 0))
+				{
+					Item.NewItem(npc.getRect(), mod.ItemType("WaterElement"), Main.rand.Next(3, 5));
+				}
+			}
 		}
 	}
 }

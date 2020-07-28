@@ -39,7 +39,7 @@ namespace CrystallineMod.Items.Armor
 			{
 				if(++projTimer >= 24)
 				{
-					Projectile.NewProjectile(player.Center,Vector2.Zero,ProjectileType<Projectiles.StarProjectile>(),10,2,player.whoAmI,40/*This is the offset value for projectiles*/ * player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()]);
+					Projectile.NewProjectile(player.Center,Vector2.Zero,ProjectileType<Projectiles.StarSpinProjectile>(),10,2,player.whoAmI,40/*This is the offset value for projectiles*/ * player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()]);
 				}
 			}
 		}
