@@ -9,12 +9,11 @@ using Terraria.ID;
 namespace CrystallineMod.Items.Armor
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AquariusHood: ModItem
+	public class AquariusHood : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("AquariusHood");
-			Tooltip.SetDefault("Allows you to swim in water");
+			DisplayName.SetDefault("Aquarius Hood");
 		}
 
 		public override void SetDefaults()
@@ -40,9 +39,10 @@ namespace CrystallineMod.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Low chance to increase fire rate of all ranged weapons";
+			player.setBonus = "Chance to increase the fire rate of ranged weapons \nGrants the ability to swim";
 			Lighting.AddLight(player.Bottom, 0.75f, 0.71f, 1.08f);
 			player.GetModPlayer<CrystallineModPlayer>().OverclockArmor = true;
+			player.accFlipper = true;
 
 		}
 
