@@ -38,16 +38,6 @@ namespace CrystallineMod.Items.Armor
 			player.minionDamage += 0.1f;
 			CrystallineModPlayer mPlayer = player.GetModPlayer<CrystallineModPlayer>();
 			mPlayer.StarlitArmorSet = true;
-			
-			
-			
-			/*if(player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()] < 3)
-			{
-				if(++projTimer >= 24)
-				{
-					Projectile.NewProjectile(player.Center,Vector2.Zero,ProjectileType<Projectiles.StarSpinProjectile>(),10,2,player.whoAmI, 40 * player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()]);
-				}
-			}*/
 		}
 	}
 }
