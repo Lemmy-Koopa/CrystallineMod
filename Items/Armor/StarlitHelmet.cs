@@ -5,7 +5,6 @@ using System;
 using CrystallineMod.Projectiles;
 using static Terraria.ModLoader.ModContent;
 
-
 namespace CrystallineMod.Items.Armor
 {
 	[AutoloadEquip(EquipType.Head)]
@@ -25,8 +24,9 @@ namespace CrystallineMod.Items.Armor
 		}
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == ModContent.ItemType<StarlitChestplate>() && legs.type == ModContent.ItemType<StarlitBoots>();
+			return body.type == ItemType<StarlitChestplate>() && legs.type == ItemType<StarlitBoots>();
 		}
+		int projTimer = 0;
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Spawns 3 stars around the player and all damage is incressed by 10%";
@@ -35,15 +35,13 @@ namespace CrystallineMod.Items.Armor
 			player.rangedDamage += 0.1f;
 			player.magicDamage += 0.1f;
 			player.minionDamage += 0.1f;
-
-			if (player.ownedProjectileCounts[2] == 0) 
-            {
-				
+			if(player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()] < 3)
+			{
+				if(++projTimer >= 24)
+				{
+					Projectile.NewProjectile(player.Center,Vector2.Zero,ProjectileType<Projectiles.StarProjectile>(),10,2,player.whoAmI,40/*This is the offset value for projectiles*/ * player.ownedProjectileCounts[ProjectileType<Projectiles.StarProjectile>()]);
+				}
 			}
-
 		}
-
-
-
 	}
 }
