@@ -2,14 +2,12 @@
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace CrystallineMod.Projectiles
 {
     class StarProjectile : ModProjectile
     {
-
-
-
         public override void SetDefaults()
         {
             projectile.width = 25;
@@ -18,14 +16,17 @@ namespace CrystallineMod.Projectiles
             projectile.melee = true;
             projectile.tileCollide = false;
             projectile.penetrate = 2;
-            projectile.aiStyle = 5;
-            projectile.timeLeft = 120;
-
+            projectile.aiStyle = -1;
+            projectile.alpha = 100;
         }
+        float frequency = 5;
         public override void AI()
         {
-
             projectile.rotation += 0.4f * projectile.direction;
+            Player player = Main.player[projectile.owner];
+            if(projectile.alpha > 0) projectile.alpha -= 2;
+            projectile.position.X = player.position.X + (float)Math.Sin((Main.GlobalTime + projectile.ai[0]) * frequency) * 45f;
+            projectile.position.Y = player.position.Y + (float)Math.Cos((Main.GlobalTime + projectile.ai[0]) * frequency) * 45f;
         }
         public override void Kill(int timeLeft)
         {
