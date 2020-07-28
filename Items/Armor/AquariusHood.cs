@@ -40,9 +40,9 @@ namespace CrystallineMod.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Small chance to gain OverclockBuff";
+			player.setBonus = "Low chance to increase fire rate of all ranged weapons";
 			Lighting.AddLight(player.Bottom, 0.75f, 0.71f, 1.08f);
-
+			player.GetModPlayer<CrystallineModPlayer>().OverclockArmor = true;
 
 		}
 
