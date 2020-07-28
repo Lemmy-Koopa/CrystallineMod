@@ -8,25 +8,23 @@ namespace CrystallineMod
     public class CrystallineModPlayer : ModPlayer
     {
         public bool OverclockBuff;
+        public bool OverclockArmor;
 
         public override void ResetEffects()// Resets the bool to false
         {
             OverclockBuff = false;
+            OverclockArmor = false;
             
         }
 
         public override void Initialize()// it Initializes the bool as false
         {
             OverclockBuff = false;
+            OverclockArmor = false;
         }
 
         public override void PostUpdateMiscEffects()
         {
-            if (OverclockBuff)
-            {
-
-            }
-
             if (!player.HasBuff(ModContent.BuffType<OverclockBuff>()))
             {
                 OverclockBuff = false;
