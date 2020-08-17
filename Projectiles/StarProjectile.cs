@@ -17,7 +17,7 @@ namespace CrystallineMod.Projectiles
             projectile.tileCollide = false;
             projectile.penetrate = 2;
             projectile.aiStyle = 5;
-            projectile.alpha = 100;
+            projectile.timeLeft = 180;
         }
        
         public override void AI()

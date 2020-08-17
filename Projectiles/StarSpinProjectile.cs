@@ -13,12 +13,9 @@ namespace CrystallineMod.Projectiles
             projectile.width = 25;
             projectile.height = 26;
             projectile.friendly = true;
-            projectile.melee = true;
             projectile.tileCollide = false;
             projectile.penetrate = -1;
             projectile.aiStyle = -1;
-          //  projectile.alpha = 100;
-            projectile.timeLeft = 99999;
         }
        
         public override void AI()

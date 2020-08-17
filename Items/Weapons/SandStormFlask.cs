@@ -10,7 +10,7 @@ namespace CrystallineMod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Homes in on nearby enemies");
+			Tooltip.SetDefault("");
 
 		}
 		public override void SetDefaults()

@@ -3,7 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
-using Terraria.ModLoader;
 using CrystallineMod.Buffs;
 using static Terraria.ModLoader.ModContent;
 
@@ -14,12 +13,13 @@ namespace CrystallineMod
         public bool OverclockBuff;
         public bool OverclockArmor;
         public bool StarlitArmorSet;
-
+        public bool TundraFrogArmorSet;
         public override void ResetEffects()// Resets the bool to false
         {
             OverclockBuff = false;
             OverclockArmor = false;
             StarlitArmorSet = false;
+            TundraFrogArmorSet = false;
             
         }
 
@@ -28,6 +28,7 @@ namespace CrystallineMod
             OverclockBuff = false;
             OverclockArmor = false;
             StarlitArmorSet = false;
+            TundraFrogArmorSet = false;
         }
 		
 		public override void UpdateDead()// it upadtes bools to false when player is dead or something
@@ -35,6 +36,22 @@ namespace CrystallineMod
             OverclockBuff = false;
             OverclockArmor = false;
             StarlitArmorSet = false;
+            TundraFrogArmorSet = false;
+        }
+
+        public override void OnHitByNPC(NPC npc, int damage, bool crit)
+        {
+            if (TundraFrogArmorSet)
+            {
+                float rotation = MathHelper.ToRadians(0);
+                for (int i = 0; i < 1; i++)
+                {
+                    Vector2 perturbedSpeed = new Vector2(player.velocity.X, player.velocity.Y).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (2 - 1))) * .2f;
+                    Projectile.NewProjectile(player.Center, perturbedSpeed, ProjectileType<Projectiles.TundraFrogMistProjectile>(), 10, 2, player.whoAmI, i);
+                }
+
+            }
+
         }
 
         public override void PostUpdateMiscEffects()
@@ -63,5 +80,7 @@ namespace CrystallineMod
 				}
 			}
         }
+
+        
     }
 }

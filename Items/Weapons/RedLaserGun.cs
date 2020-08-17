@@ -24,8 +24,8 @@ namespace CrystallineMod.Items.Weapons
 			item.mana = 5;
 			item.width = 36;
 			item.height = 20;
-			item.useTime = 18;
-			item.useAnimation = 18;
+			item.useTime = 17;
+			item.useAnimation = 17;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 5;
@@ -47,14 +47,25 @@ namespace CrystallineMod.Items.Weapons
 			recipe.AddRecipe();
 		}
 
+		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+            int numberProjectiles = 2 + Main.rand.Next(5);
+            for (int i = 0; i < numberProjectiles; i++)
+			{
+				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(35)); 
+				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+				
+			}
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
-			return true;
+			return false;
 		}
-	}
+
+
+      
+    }
 }

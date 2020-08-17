@@ -9,15 +9,15 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("TundraFrog Boots");
-			Tooltip.SetDefault("");
+			DisplayName.SetDefault("Tundra Frog Boots");
+			Tooltip.SetDefault("Provides extra mobility on ice \nIce will not break when you fall on it");
 		}
 
 		public override void SetDefaults()
 		{
 			item.width = 20;
 			item.height = 20;
-			item.defense = 1;
+			item.defense = 2;
 			item.value = 25000;
 
 
@@ -30,6 +30,13 @@ namespace CrystallineMod.Items.Armor
 			recipe.AddIngredient(mod.ItemType("FrostElement"), 15);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+		}
+
+		public override void UpdateEquip(Player player)
+		{
+			player.iceSkate = true;
+			player.autoJump = true;
+			player.jumpBoost = true;			
 		}
 	}
 }

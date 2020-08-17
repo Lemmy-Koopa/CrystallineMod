@@ -12,7 +12,7 @@ namespace CrystallineMod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("LeafBow");
+			DisplayName.SetDefault("Leaf Bow");
 			Tooltip.SetDefault("Shoots 3 arrows per shot \n" + "Has a Chance to convert 2ood arrows into leaf arrows which can perice up to 3 enemies");
 		}
 		public override void SetDefaults()

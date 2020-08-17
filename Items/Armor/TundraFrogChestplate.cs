@@ -1,5 +1,7 @@
 ﻿using Terraria.ModLoader;
 using Terraria.ID;
+using System.Security.Policy;
+using Terraria;
 
 namespace CrystallineMod.Items.Armor
 {
@@ -8,14 +10,15 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("TundraFrog Chestplate");
+			DisplayName.SetDefault("Tundra Frog Chestplate");
+			Tooltip.SetDefault("5% increased magic damage and crit");
 		}
 
 		public override void SetDefaults()
 		{
 			item.width = 30;
 			item.height = 30;
-			item.defense = 4;
+			item.defense = 3;
 			item.value = 25000;
 
 		}
@@ -28,5 +31,12 @@ namespace CrystallineMod.Items.Armor
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-	}
+       
+
+        public override void UpdateArmorSet(Player player)
+        {
+			player.magicDamage += 0.05f;
+			player.magicCrit = 5;
+        }
+    }
 }

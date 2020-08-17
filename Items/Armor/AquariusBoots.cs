@@ -10,7 +10,7 @@ namespace CrystallineMod.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Aquarius Boots");
-			Tooltip.SetDefault("Increases ranged damage by 3% and ranged crit by 2%");
+			Tooltip.SetDefault("Increases movement speed by 15%");
 		}
 
 		public override void SetDefaults()

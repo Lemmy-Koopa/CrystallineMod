@@ -13,14 +13,15 @@ namespace CrystallineMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("TundraFrog Helement");
+			DisplayName.SetDefault("Tundra Frog Helement");
+			Tooltip.SetDefault("15% increased magic damage");
 		}
 
 		public override void SetDefaults()
 		{
 			item.width = 5;
 			item.height = 19;
-			item.defense = 3;
+			item.defense = 2;
 			item.value = 2000;
 		}
 		public override void AddRecipes()
@@ -34,6 +35,14 @@ namespace CrystallineMod.Items.Armor
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
 			return body.type == ModContent.ItemType<TundraFrogChestplate>() && legs.type == ModContent.ItemType<TundraFrogBoots>();
+		}
+
+		public override void UpdateEquip(Player player)
+		{
+			player.magicDamage += 0.15f;
+			player.setBonus = "Shoots out a forst mist around the player when you collide with an enemy";
+			CrystallineModPlayer mPlayer = player.GetModPlayer<CrystallineModPlayer>();
+			mPlayer.TundraFrogArmorSet = true;
 		}
 	}
 }
